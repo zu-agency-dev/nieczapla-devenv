@@ -1,7 +1,9 @@
-import { greetUser } from '$utils/greet';
-
 window.Webflow ||= [];
 window.Webflow.push(() => {
-  const name = 'John Doe';
-  greetUser(name);
+  console.log('hello, localhost!');
+
+  document.addEventListener('load', => {
+    const heroImageOverlay = document.querySelector('.hero-background_image-overlay');
+    heroImageOverlay.style.background = '"' + heroImageOverlay.getAttribute('data-color') + '";';
+  });
 });
