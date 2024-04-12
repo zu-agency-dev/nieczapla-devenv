@@ -8,6 +8,9 @@ dependencies:
   '@barba/core':
     specifier: ^2.9.7
     version: 2.9.7
+  '@barba/css':
+    specifier: ^2.1.15
+    version: 2.1.15
   '@finsweet/attributes-cmsslider':
     specifier: ^1.7.1
     version: 1.7.1
@@ -109,6 +112,10 @@ packages:
     dependencies:
       is-promise: 2.2.2
       path-to-regexp: 3.2.0
+    dev: false
+
+  /@barba/css@2.1.15:
+    resolution: {integrity: sha512-nzLZZHqvQ+j22rLD1xIOUBPEYibHqa0euIiwo8vOvLg0ny9yWAUKfHDLJLDY0U1QC80oWHa+bp4rtolYmYeuQA==}
     dev: false
 
   /@changesets/apply-release-plan@7.0.0:

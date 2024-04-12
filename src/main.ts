@@ -1,23 +1,36 @@
 import barba from '@barba/core';
-import { gsap } from 'gsap';
+import barbaCss from '@barba/css';
 
 window.Webflow ||= [];
 window.Webflow.push(() => {
-  console.log('hello, localhost!');
+  barba.use(barbaCss);
 
+  // TODO: data.next.container -> automatically scrollTop
+  Barba.Dispatcher.on('newPageReady', function(current, prev, container) {
+    history.scrollRestoration = 'manual';
+  });
   barba.init({
     transitions: [{
-      name: 'page-slide',
-      leave() {
-        return gsap.to(data.current.container, {
-          opacity: 0
-        });
-      },
-      enter() {
-        return gsap.from(data.next.container, {
-          opacity: 0
-        });
-      }
+      name: 'left',
+      from: { namespace: 'home' },
+      to: { namespace: 'left' },
+      sync: true,
+      leave() {},
+      enter() {},
+    }, {
+      name: 'right',
+      from: { namespace: 'home' },
+      to: { namespace: 'right' },
+      sync: true,
+      leave() {},
+      enter() {},
+    }, {
+      name: 'down',
+      from: { namespace: 'home' },
+      to: { namespace: 'down' },
+      sync: true,
+      leave() {},
+      enter() {},
     }]
   });
 });
