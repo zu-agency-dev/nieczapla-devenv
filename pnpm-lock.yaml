@@ -23,6 +23,9 @@ dependencies:
   gsap:
     specifier: ^3.12.5
     version: 3.12.5
+  locomotive-scroll:
+    specifier: 5.0.0-beta.11
+    version: 5.0.0-beta.11
 
 devDependencies:
   '@changesets/changelog-git':
@@ -656,6 +659,10 @@ packages:
     dependencies:
       playwright: 1.42.1
     dev: true
+
+  /@studio-freight/lenis@1.0.29:
+    resolution: {integrity: sha512-z/qS8ato5m2wlxQREYj5iALcxMrhhm06vEiLqYzLI+3HmpPzPscmJ8cXNiay4bj692vOot2hyTA3WP++AQVoKA==}
+    dev: false
 
   /@types/json-schema@7.0.15:
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
@@ -2067,6 +2074,13 @@ packages:
     dependencies:
       p-locate: 5.0.0
     dev: true
+
+  /locomotive-scroll@5.0.0-beta.11:
+    resolution: {integrity: sha512-FQm0Yjk9X+euXmiaKVRVQNw/WuQXoTBp9eqPyZqsXDSwuiedaoJzzC0SGBM9CZRJ4tKaCHGa3pfp6CFgPyEq6Q==}
+    engines: {node: '>=17'}
+    dependencies:
+      '@studio-freight/lenis': 1.0.29
+    dev: false
 
   /lodash.merge@4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}

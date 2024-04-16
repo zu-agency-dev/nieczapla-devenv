@@ -1,7 +1,3 @@
-:root {
-  --transition: all .75s ease-out;
-}
-
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -23,43 +19,10 @@
   to { transform: translateX(calc(-100% - 1rem)); }
 }
 
-/* BarbaJS transitions */
-
-.left-leave-active,
-.left-enter-active,
-.right-leave-active,
-.right-enter-active,
-.down-leave-active
-.down-enter-active { 
-  transition: var(--transition);
+.product_overlay.is-hover-content {
+  transition: all 0.33s ease-out;
 }
 
-.left-leave,
-.right-leave {
-  transform: translateX(0);
-}
-
-.left-leave-to { transform: translateX(100%); }
-.left-enter { transform: translateX(-100%)}
-
-.right-leave-to { transform: translateX(-100%); }
-.right-enter { transform: translateX(100%); }
-
-.left-enter-to,
-.right-enter-to {
-  transform: translateX(0);
-  position: absolute;
-  top: -100vh;
-  left: 0;
-}
-
-.down-leave { transform: translateY(0); }
-.down-leave-to { transform: translateY(100%); }
-
-.down-enter { transform: translateX(0); }
-.down-enter-to {
-  transform: translateY(-100%);
-  position: absolute;
-  top: -100vh;
-  left: 0;
+.product_item:hover .product_overlay.is-hover-content {
+  top: 0;
 }

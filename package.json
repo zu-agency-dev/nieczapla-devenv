@@ -57,7 +57,8 @@
     "@finsweet/attributes-cmsslider": "^1.7.1",
     "@finsweet/ts-utils": "^0.40.0",
     "fullpage.js": "^4.0.22",
-    "gsap": "^3.12.5"
+    "gsap": "^3.12.5",
+    "locomotive-scroll": "5.0.0-beta.11"
   },
   "engines": {
     "pnpm": ">=8"
