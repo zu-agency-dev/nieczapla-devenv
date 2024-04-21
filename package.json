@@ -1,20 +1,20 @@
 {
-  "name": "@finsweet/developer-starter",
+  "name": "zu-agency-dev/nieczapla-devenv",
   "version": "0.0.0",
-  "description": "Developer starter template for Finsweet projects.",
-  "homepage": "https://github.com/finsweet/developer-starter#readme",
+  "description": "Scripts for Nieczapla Coffee Roasters website.",
+  "homepage": "https://github.com/zu-agency-dev/nieczapla-devenv",
   "license": "ISC",
   "keywords": [],
   "author": {
-    "name": "Finsweet",
-    "url": "https://finsweet.com/"
+    "name": "zu.agency",
+    "url": "https://github.com/zu-agency"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/finsweet/developer-starter.git"
+    "url": "git+https://github.com/zu-agency-dev/nieczapla-devenv.git"
   },
   "bugs": {
-    "url": "https://github.com/finsweet/developer-starter/issues"
+    "url": "https://github.com/zu-agency-dev/nieczapla-devenv/issues"
   },
   "type": "module",
   "main": "src/index.ts",
@@ -53,12 +53,9 @@
   },
   "dependencies": {
     "@barba/core": "^2.9.7",
-    "@barba/css": "^2.1.15",
     "@finsweet/attributes-cmsslider": "^1.7.1",
     "@finsweet/ts-utils": "^0.40.0",
-    "fullpage.js": "^4.0.22",
-    "gsap": "^3.12.5",
-    "locomotive-scroll": "5.0.0-beta.11"
+    "gsap": "^3.12.5"
   },
   "engines": {
     "pnpm": ">=8"

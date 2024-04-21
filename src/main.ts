@@ -1,5 +1,8 @@
 import barba from '@barba/core';
 import { gsap } from 'gsap';
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+gsap.registerPlugin(ScrollToPlugin);
 
 window.Webflow ||= [];
 window.Webflow.push(() => {
@@ -22,6 +25,16 @@ window.Webflow.push(() => {
     }
 
     window.scrollTo(0, 0);
+  });
+
+  const heroButton = document.querySelector('.hero-button');
+  heroButton.addEventListener('click', () => {
+    gsap.to(window, {
+      duration: 1, 
+      scrollTo: { 
+	y: document.body.scrollHeight 
+      }
+    });
   });
 
   barba.init({
