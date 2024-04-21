@@ -6,7 +6,6 @@ gsap.registerPlugin(ScrollToPlugin);
 
 window.Webflow ||= [];
 window.Webflow.push(() => {
-  console.log('hello');
 
   barba.hooks.enter((data) => {
     window.Webflow && window.Webflow.destroy();
