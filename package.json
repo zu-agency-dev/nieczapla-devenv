@@ -1,6 +1,6 @@
 {
-  "name": "zu-agency-dev/nieczapla-devenv",
-  "version": "1.0.1",
+  "name": "nieczapla-devenv",
+  "version": "1.0.0",
   "description": "Scripts for Nieczapla Coffee Roasters website.",
   "homepage": "https://github.com/zu-agency-dev/nieczapla-devenv",
   "license": "ISC",

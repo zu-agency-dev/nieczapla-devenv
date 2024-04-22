@@ -27,14 +27,16 @@ window.Webflow.push(() => {
   });
 
   const heroButton = document.querySelector('.hero-button');
-  heroButton.addEventListener('click', () => {
-    gsap.to(window, {
-      duration: 1, 
-      scrollTo: { 
-	y: document.body.scrollHeight 
-      }
+  if (heroButton) {
+    heroButton.addEventListener('click', () => {
+      gsap.to(window, {
+        duration: 1, 
+        scrollTo: { 
+	        y: document.body.scrollHeight 
+        }
+      });
     });
-  });
+  }
 
   barba.init({
     transitions: [
