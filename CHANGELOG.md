@@ -1,5 +1,11 @@
 # zu-agency-dev/nieczapla-devenv
 
+## 1.0.3
+
+### Patch Changes
+
+- 7c6c8f2: 1.0.3
+
 ## 1.0.2
 
 ### Patch Changes
