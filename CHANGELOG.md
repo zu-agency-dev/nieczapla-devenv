@@ -1,5 +1,12 @@
 # zu-agency-dev/nieczapla-devenv
 
+## 1.0.4
+
+### Patch Changes
+
+- 7d08b0e: bugfix w/ routing
+- 00cf071: bugfix: routes
+
 ## 1.0.3
 
 ### Patch Changes
