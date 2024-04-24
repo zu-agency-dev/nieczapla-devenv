@@ -1,23 +1,33 @@
 import barba from '@barba/core';
 import { gsap } from 'gsap';
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 
 gsap.registerPlugin(ScrollToPlugin);
 
 window.Webflow ||= [];
 window.Webflow.push(() => {
-
-  barba.hooks.enter((data) => {
+  barba.hooks.enter(() => {
     window.Webflow && window.Webflow.destroy();
     window.Webflow && window.Webflow.ready();
     window.Webflow && window.Webflow.require('ix2').init();
     document.dispatchEvent(new Event('readystatechange'));
 
-    const scriptElement = document.createElement('script');
-    const scriptSRC = 'https://cdn.jsdelivr.net/npm/@finsweet/attributes-cmsslider@1/cmsslider.js';
-    scriptElement.setAttribute('async', '');
-    scriptElement.setAttribute('src', scriptSRC);
-    document.head.appendChild(scriptElement);
+    function createScriptTag(url: string) {
+      const scriptElement = document.createElement('script');
+      scriptElement.setAttribute('async', '');
+      scriptElement.setAttribute('src', url);
+      document.head.appendChild(scriptElement);
+    }
+
+    createScriptTag('https://cdn.jsdelivr.net/npm/@finsweet/attributes-cmsslider@1/cmsslider.js');
+
+    if (window.location.pathname === '/quiz') {
+      barba.force((window.location.pathname = '/quiz'));
+    }
+
+    if (window.location.pathname === '/') {
+      barba.force((window.location.pathname = '/'));
+    }
 
     if (history.scrollRestoration) {
       history.scrollRestoration = 'manual';
@@ -30,10 +40,8 @@ window.Webflow.push(() => {
   if (heroButton) {
     heroButton.addEventListener('click', () => {
       gsap.to(window, {
-        duration: 1, 
-        scrollTo: { 
-	        y: document.body.scrollHeight 
-        }
+        duration: 1,
+        scrollTo: { y: document.body.scrollHeight },
       });
     });
   }
