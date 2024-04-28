@@ -19,10 +19,12 @@
   to { transform: translateX(calc(-100% - 1rem)); }
 }
 
-.product_overlay.is-hover-content {
+.product_overlay.is-hover-content,
+.product_item-overlay {
   transition: all 0.33s ease-out;
 }
 
-.product_item:hover .product_overlay.is-hover-content {
+.product_item:hover .product_overlay.is-hover-content,
+.product_item:hover .product_item-overlay {
   top: 0;
 }
