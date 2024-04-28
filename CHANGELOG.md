@@ -1,5 +1,11 @@
 # zu-agency-dev/nieczapla-devenv
 
+## 1.0.5
+
+### Patch Changes
+
+- cfb4408: pre-release: 1.0.5
+
 ## 1.0.4
 
 ### Patch Changes
