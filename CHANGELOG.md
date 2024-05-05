@@ -1,5 +1,11 @@
 # zu-agency-dev/nieczapla-devenv
 
+## 1.0.6
+
+### Patch Changes
+
+- ffd86c5: prerelease: 1.0.6
+
 ## 1.0.5
 
 ### Patch Changes
