@@ -1,5 +1,11 @@
 # zu-agency-dev/nieczapla-devenv
 
+## 1.1.0
+
+### Minor Changes
+
+- 99788df: Create new version of animations on website. Removed Barba code, remade GSAP code from scratch.
+
 ## 1.0.6
 
 ### Patch Changes
