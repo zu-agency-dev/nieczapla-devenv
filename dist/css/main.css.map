@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../src/css/main.css"],
+  "sourcesContent": ["* {\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  -o-font-smoothing: antialiased;\n}\n\n.w-slider-dot {\n  border-radius: 0 !important;\n  background-color: var(--base-color-brand--nieczapla-black) !important;\n  opacity: 0.5;\n}\n\n.w-slider-dot.w-active {\n  opacity: 1;\n}\n\n@keyframes marquee-scroll {\n  from { transform: translateX(0); }\n  to { transform: translateX(calc(-100% - 1rem)); }\n}\n\n.product_overlay.is-hover-content,\n.product_item-overlay {\n  transition: all 0.33s ease-out;\n}\n\n.product_item:hover .product_overlay.is-hover-content,\n.product_item:hover .product_item-overlay {\n  top: 0;\n}"],
+  "mappings": ";AAAA;AACE,0BAAwB;AACxB,2BAAyB;AACzB,qBAAmB;AACrB;AAEA,CAAC;AACC,iBAAe;AACf,oBAAkB,IAAI;AACtB,WAAS;AACX;AAEA,CANC,YAMY,CAAC;AACZ,WAAS;AACX;AAEA,WAAW;AACT;AAAO,eAAW,WAAW;AAAI;AACjC;AAAK,eAAW,WAAW,KAAK,MAAM,EAAE;AAAQ;AAClD;AAEA,CAAC,eAAe,CAAC;AACjB,CAAC;AACC,cAAY,IAAI,MAAM;AACxB;AAEA,CAAC,YAAY,OAAO,CALnB,eAKmC,CALnB;AAMjB,CADC,YACY,OAAO,CALnB;AAMC,OAAK;AACP;",
+  "names": []
+}
