@@ -1,145 +1,48 @@
-import barba from '@barba/core';
-import { restartWebflow } from '@finsweet/ts-utils';
-import { gsap } from 'gsap';
-
-window.Webflow ||= [];
-window.Webflow.push(() => {
-  restartWebflow();
-
-  barba.hooks.enter(() => {
-    restartWebflow();
-    document.dispatchEvent(new Event('readystatechange'));
-
-    function createScriptTag(url: string) {
-      const scriptElement = document.createElement('script');
-      scriptElement.setAttribute('async', '');
-      scriptElement.setAttribute('src', url);
-      document.head.appendChild(scriptElement);
-    }
-
-    createScriptTag('https://cdn.jsdelivr.net/npm/@finsweet/attributes-cmsslider@1/cmsslider.js');
-
-    if (window.location.pathname === '/quiz') {
-      barba.force((window.location.pathname = '/quiz'));
-    }
-
-    if (window.location.pathname === '/') {
-      barba.force((window.location.pathname = '/'));
-    }
-
-    if (history.scrollRestoration) {
-      history.scrollRestoration = 'manual';
-    }
-
-    window.scrollTo(0, 0);
+import gsap from 'gsap';
+import ScrollToPlugin from 'gsap/ScrollToPlugin';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+const pinnedSections = document.querySelectorAll('[data-gsap-scroll="pin"]');
+let isScrolling = false;
+let currentIndex = 0;
+pinnedSections.forEach((section, index) => {
+  const nextSection = section.nextElementSibling;
+  ScrollTrigger.create({
+    trigger: section,
+    start: 'top top',
+    end: '100% top',
+    onEnter: () => {
+      if (!isScrolling && nextSection) {
+        isScrolling = true;
+        gsap.to(window, {
+          duration: 1,
+          scrollTo: nextSection,
+          ease: 'power2.inOut',
+          onComplete: () => (isScrolling = false),
+        });
+      }
+    },
   });
-
-  barba.init({
-    transitions: [
-      {
-        name: 'left',
-        from: { namespace: ['home', 'right'] },
-        to: { namespace: ['left', 'home'] },
-        sync: true,
-        leave(data) {
-          gsap.from(data.current.container, {
-            x: '0%',
-            duration: 0.5,
-          });
-          gsap.to(data.current.container, {
-            x: '100%',
-            duration: 0.5,
-          });
-        },
-        enter(data) {
-          gsap.from(data.next.container, {
-            x: '-100%',
-            duration: 0.5,
-          });
-          gsap.to(data.next.container, {
-            x: '0%',
-            duration: 0.5,
-          });
-        },
-      },
-      {
-        name: 'right',
-        from: { namespace: ['home', 'left'] },
-        to: { namespace: ['right', 'home'] },
-        sync: true,
-        leave(data) {
-          gsap.from(data.current.container, {
-            x: '0%',
-            y: '0%',
-          });
-          gsap.to(data.current.container, {
-            x: '-100%',
-            duration: 0.5,
-          });
-        },
-        enter(data) {
-          gsap.from(data.next.container, {
-            x: '100%',
-            duration: 0.5,
-          });
-          gsap.to(data.next.container, {
-            x: '0%',
-            duration: 0.5,
-          });
-        },
-      },
-      {
-        name: 'down',
-        from: { namespace: 'home' },
-        to: { namespace: 'down' },
-        sync: true,
-        leave(data) {
-          gsap.from(data.current.container, {
-            y: '0%',
-            duration: 0.5,
-          });
-          gsap.to(data.current.container, {
-            y: '-100%',
-            duration: 0.5,
-          });
-        },
-        enter(data) {
-          gsap.from(data.next.container, {
-            y: '100%',
-            duration: 0.5,
-          });
-          gsap.to(data.next.container, {
-            y: '0%',
-            duration: 0.5,
-          });
-        },
-      },
-      {
-        name: 'up',
-        from: { namespace: 'down' },
-        to: { namespace: 'home' },
-        sync: true,
-        leave(data) {
-          gsap.from(data.current.container, {
-            y: '0%',
-            duration: 0.5,
-          });
-          gsap.to(data.current.container, {
-            y: '100%',
-            duration: 0.5,
-          });
-        },
-        enter(data) {
-          gsap.from(data.next.container, {
-            y: '-100%',
-            duration: 0.5,
-          });
-          gsap.to(data.next.container, {
-            y: '0%',
-            duration: 0.5,
-          });
-        },
-      },
-    ],
-  });
+  // Add wheel event only for pinned sections
+  section.addEventListener(
+    'wheel',
+    (e) => {
+      if (isScrolling) {
+        e.preventDefault();
+        return;
+      }
+      const direction = e.deltaY > 0 ? 1 : -1;
+      const nextIndex = Math.max(0, Math.min(pinnedSections.length - 1, index + direction));
+      if (nextIndex !== index) {
+        isScrolling = true;
+        gsap.to(window, {
+          duration: 1,
+          scrollTo: pinnedSections[nextIndex],
+          ease: 'power2.inOut',
+          onComplete: () => (isScrolling = false),
+        });
+      }
+    },
+    { passive: false }
+  );
 });

@@ -36,26 +36,26 @@
   },
   "devDependencies": {
     "@changesets/changelog-git": "^0.2.0",
-    "@changesets/cli": "^2.27.1",
+    "@changesets/cli": "^2.27.12",
     "@finsweet/eslint-config": "^2.0.7",
-    "@finsweet/tsconfig": "^1.3.4",
-    "@playwright/test": "^1.42.1",
-    "@typescript-eslint/eslint-plugin": "^7.1.1",
-    "@typescript-eslint/parser": "^7.1.1",
+    "@finsweet/tsconfig": "^1.4.2",
+    "@playwright/test": "^1.50.1",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
     "cross-env": "^7.0.3",
-    "esbuild": "^0.20.1",
-    "eslint": "^8.57.0",
+    "esbuild": "^0.20.2",
+    "eslint": "^8.57.1",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.1.3",
-    "eslint-plugin-simple-import-sort": "^12.0.0",
-    "prettier": "^3.2.5",
-    "typescript": "^5.3.3"
+    "eslint-plugin-prettier": "^5.2.3",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "prettier": "^3.5.0",
+    "typescript": "^5.7.3"
   },
   "dependencies": {
-    "@barba/core": "^2.9.7",
+    "@barba/core": "^2.10.3",
     "@finsweet/attributes-cmsslider": "^1.7.1",
     "@finsweet/ts-utils": "^0.40.0",
-    "gsap": "^3.12.5"
+    "gsap": "^3.12.7"
   },
   "engines": {
     "pnpm": ">=8"
